@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 # we added include to add new apps Urls
 from django.urls import path, include
+from users import views as user_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +28,9 @@ urlpatterns = [
     # the route to route that ends with ( / )
     # path('blog/', include('blog.urls')),
     path('', include('blog.urls')),
+
+
+    # we used the view directly of users
+    path('register/',user_view.register, name="register"),
 
 ]

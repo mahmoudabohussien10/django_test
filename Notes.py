@@ -70,6 +70,18 @@
 # ----------------
 # https://docs.djangoproject.com/en/2.0/ref/templates/builtins/#filters
 # ===========================================================================================================
+# we need to install an app to styling our django form so we can use:crispy its a popular app for styling:-
+# ---------------------------------------------------------------------------------------------------------
+# pip install cython
+# pip install django-crispy-forms
+# after install go to settings and add this app to installed apps "crispy_forms"
+# and at the end add CRISPY_TEMPLATE_PACK='bootstrap4'  by default crispy works on bootstrap 2
+# ===========================================================================================================
+
+
+
+
+
 
 
 

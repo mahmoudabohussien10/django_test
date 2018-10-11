@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +33,7 @@
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="#">Login</a>
-                    <a class="nav-item nav-link" href="#">Register</a>
+                    <a class="nav-item nav-link" href="{% url "register" %}">Register</a>
                 </div>
             </div>
         </div>
@@ -43,6 +42,14 @@
 <main role="main" class="container">
     <div class="row">
         <div class="col-md-8">
+            {# show flash messages #}
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="alert alert-{{ msg.tags }}">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             {# block is the place we can overwrite by used pages #}
             {% block content %}{% endblock %}
         </div>
