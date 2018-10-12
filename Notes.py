@@ -77,19 +77,20 @@
 # after install go to settings and add this app to installed apps "crispy_forms"
 # and at the end add CRISPY_TEMPLATE_PACK='bootstrap4'  by default crispy works on bootstrap 2
 # ===========================================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
+# library to work with images with python:-
+# -----------------------------------------
+# pip install Pillow
+# ===========================================================================================================
+# open django shell:-
+# --------------------
+# from django.contrib.auth.models import User
+# user = User.objects.filter(username='admin').first()
+# user.profile
+# user.profile.image
+# user.profile.image.width
+# user.profile.image.size
+# user.profile.image.height
+# user.profile.image.url
 
 
 
