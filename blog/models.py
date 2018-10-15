@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 # get users model
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
@@ -20,3 +20,8 @@ class Post(models.Model):
     # we added this function to get title when i print its object
     def __str__(self):
         return self.title
+
+    # reverse method is used to return full url to the location we want
+
+    def get_absolute_url(self):
+        return reverse("blog-details", kwargs={'pk': self.pk})
