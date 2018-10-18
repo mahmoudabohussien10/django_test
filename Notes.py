@@ -91,23 +91,30 @@
 # user.profile.image.size
 # user.profile.image.height
 # user.profile.image.url
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# ===========================================================================================================
+# Insert Json file into DB using django shell:-
+# ----------------------------------------------
+# import json
+# from blog.models import Post
+# with open("posts.json") as f:
+#   post_json = json.load(f)
+# for post in post_json:
+#     post = Post(title=post['title'], content=post['content'], author_id=post['user_id'])
+#     post.save()
+# ===========================================================================================================
+# Pagenator:-
+# -----------
+# from django.core.paginator import Paginator
+# posts = ['1','2','3','4','5']
+# p = Paginator(posts, 2)
+# p.num_pages
+# for page in p.page_range:
+#   print(page)
+# if u want to view page "p.page(1)"
+# p1 = p.page(1)
+# to get page number "p1.number"
+# to get list of data "p1.object_list"
+# p1.has_previous()
+# p1.has_next()
+# p1.next_page_number()
+# ===========================================================================================================

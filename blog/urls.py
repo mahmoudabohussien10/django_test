@@ -11,7 +11,8 @@ from .views import (
     PostDetailView,
     PostCreateView,
     PostUpdateView,
-    PostDeleteView
+    PostDeleteView,
+    UserPostListView
 )
 
 urlpatterns = [
@@ -32,5 +33,7 @@ urlpatterns = [
     # update a post
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name="blog-update"),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name="blog-delete"),
+    # get user posts
+    path('user/<str:username>/', UserPostListView.as_view(), name="user-posts"),
 
 ]
