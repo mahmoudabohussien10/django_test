@@ -1,4 +1,6 @@
-from django.shortcuts import render
+# get_object_or_404 return 404 if user is not found in the query
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
 from .models import Post
 # import response
 from django.http import HttpResponse
@@ -63,6 +65,19 @@ class PostListView(ListView):
     # this will order the data from oldest to newest
     # if we want to change it to be from newest to oldest we add (-) as a prefix to our col name
     ordering = ["-date"]
+    # set pagination number
+    paginate_by = 5
+
+# get post that written by this user
+class UserPostListView(ListView):
+    model = Post
+    template_name = "blog/user_posts.html"
+    context_object_name = "posts"
+    paginate_by = 5
+    def get_queryset(self):
+        # kwargs is the query params
+        user = get_object_or_404(User,username= self.kwargs.get("username"))
+        return Post.objects.filter(author=user).order_by('-date')
 
 
 # this class used to view one post details

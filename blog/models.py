@@ -22,6 +22,5 @@ class Post(models.Model):
         return self.title
 
     # reverse method is used to return full url to the location we want
-
     def get_absolute_url(self):
         return reverse("blog-details", kwargs={'pk': self.pk})
